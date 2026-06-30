@@ -1,0 +1,27 @@
+csv_input_dir: /data/recruiter_exports
+resume_input_dir: /data/resumes
+output_dir: /data/processed
+
+output_formats:
+  - json
+  - excel
+
+skill_taxonomy_file: /app/data/taxonomies/skills.json
+company_synonyms_file: /app/data/taxonomies/companies.json
+schema_file: /app/data/schemas/schema.json
+
+merge_priority: CSV
+merge_strategy:
+  name: csv_preferred
+  email: csv_preferred
+  phone: csv_preferred
+  skills: union
+  current_company: csv_preferred
+  years_of_experience: longest
+
+parallel: true
+max_workers: 8
+
+verbose: false
+quiet: true
+log_file: /var/log/candidate-pipeline/pipeline.log

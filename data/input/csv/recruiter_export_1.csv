@@ -1,0 +1,5 @@
+Candidate Name,Email Address,Phone Number,Skills,Current Company,Job Title,Years of Experience,LinkedIn
+Jane Doe,Jane.Doe@Example.com,(415) 555-0182,"Python, Django, AWS, Docker",Google,Senior Software Engineer,7,linkedin.com/in/janedoe
+John Smith,john.smith@mail.com,415-555-0199,"Java, Spring Boot, Kubernetes",Amazon,Backend Engineer,5,linkedin.com/in/johnsmith
+Maria Garcia,maria.garcia@workmail.com,650-555-0143,"React, TypeScript, Node.js",Meta,Frontend Engineer,4,
+Alex Chen,alex.chen@example.com,212-555-0177,"SQL, Tableau, Python",Microsoft,Data Analyst,3,linkedin.com/in/alexchen

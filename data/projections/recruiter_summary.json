@@ -1,0 +1,14 @@
+{
+  "fields": [
+    {"source": "profile_id", "target": "id"},
+    {"source": "name.value", "target": "candidate_name"},
+    {"source": "email.value", "target": "email"},
+    {"source": "contact.phone.value", "target": "phone"},
+    {"source": "current_company.value", "target": "company"},
+    {"source": "years_of_experience.value", "target": "yoe"},
+    {"source": "skills", "target": "top_skills", "extract": "value", "list": true}
+  ],
+  "include_provenance": false,
+  "include_confidence": true,
+  "missing_value_policy": "omit"
+}

@@ -1,0 +1,77 @@
+{
+  "run_started_at": "2026-06-30T18:01:27.649924",
+  "run_finished_at": "2026-06-30T18:01:40.586512",
+  "duration_seconds": 12.937,
+  "input_summary": {
+    "csv_records_parsed": 6,
+    "resumes_parsed": 3
+  },
+  "output_summary": {
+    "total_profiles": 7,
+    "valid_profiles": 7,
+    "invalid_profiles": 0,
+    "profiles_by_origin": {
+      "CSV": 4,
+      "RESUME_PDF": 1,
+      "MERGED": 2
+    },
+    "average_confidence": 0.8997
+  },
+  "validation": {
+    "total_warnings": 4,
+    "details": [
+      {
+        "profile_id": "276a5d90-7100-42d0-9b02-9c7c5b9673be",
+        "is_valid": true,
+        "errors": [],
+        "warnings": [
+          "No work experience found for candidate"
+        ]
+      },
+      {
+        "profile_id": "69be6aaa-e8d9-4ea0-9fd5-30060a4c60e8",
+        "is_valid": true,
+        "errors": [],
+        "warnings": [
+          "No work experience found for candidate"
+        ]
+      },
+      {
+        "profile_id": "4e2ad209-3c46-4aef-8df9-b841657cef22",
+        "is_valid": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "profile_id": "12546258-f05e-4f54-b8fe-7ab0ef42ba22",
+        "is_valid": true,
+        "errors": [],
+        "warnings": []
+      },
+      {
+        "profile_id": "e3109af2-aef2-4005-b7cb-9bdcb4fb0fcb",
+        "is_valid": true,
+        "errors": [],
+        "warnings": [
+          "No work experience found for candidate"
+        ]
+      },
+      {
+        "profile_id": "eb3657fe-818d-4f46-9c3b-34263f602a0e",
+        "is_valid": true,
+        "errors": [],
+        "warnings": [
+          "No work experience found for candidate"
+        ]
+      },
+      {
+        "profile_id": "08200b68-0031-496a-b5f4-0de8246b7ddd",
+        "is_valid": true,
+        "errors": [],
+        "warnings": []
+      }
+    ]
+  },
+  "errors": [],
+  "error_count": 0
+}

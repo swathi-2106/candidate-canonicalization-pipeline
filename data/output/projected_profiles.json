@@ -1,0 +1,133 @@
+[
+  {
+    "id": "276a5d90-7100-42d0-9b02-9c7c5b9673be",
+    "name": "Priya Patel",
+    "name_confidence": "HIGH",
+    "email": "priya.patel@example.com",
+    "email_confidence": "HIGH",
+    "current_company": "IBM",
+    "current_company_confidence": "HIGH",
+    "years_of_experience": 6.0,
+    "years_of_experience_confidence": "HIGH",
+    "skills": [
+      "Go",
+      "gRPC",
+      "PostgreSQL"
+    ],
+    "confidence_score": 1.0
+  },
+  {
+    "id": "69be6aaa-e8d9-4ea0-9fd5-30060a4c60e8",
+    "name": "Tom Becker",
+    "name_confidence": "HIGH",
+    "email": "tom.becker@example.com",
+    "email_confidence": "HIGH",
+    "current_company": "Apple",
+    "current_company_confidence": "HIGH",
+    "years_of_experience": 9.0,
+    "years_of_experience_confidence": "HIGH",
+    "skills": [
+      "C++",
+      "Linux",
+      "Embedded Systems"
+    ],
+    "confidence_score": 1.0
+  },
+  {
+    "id": "4e2ad209-3c46-4aef-8df9-b841657cef22",
+    "name": "Jane Doe",
+    "name_confidence": "HIGH",
+    "email": "jane.doe@example.com",
+    "email_confidence": "HIGH",
+    "current_company": "Google",
+    "current_company_confidence": "HIGH",
+    "years_of_experience": 7.0,
+    "years_of_experience_confidence": "MEDIUM",
+    "skills": [
+      "Python",
+      "Django",
+      "AWS",
+      "Docker",
+      "React",
+      "Kubernetes",
+      "PostgreSQL",
+      "Microservices"
+    ],
+    "confidence_score": 0.8104
+  },
+  {
+    "id": "12546258-f05e-4f54-b8fe-7ab0ef42ba22",
+    "name": "John Smith",
+    "name_confidence": "HIGH",
+    "email": "john.smith@mail.com",
+    "email_confidence": "HIGH",
+    "current_company": "Amazon",
+    "current_company_confidence": "HIGH",
+    "years_of_experience": 7.3,
+    "years_of_experience_confidence": "LOW",
+    "skills": [
+      "Java",
+      "Spring Boot",
+      "Kubernetes",
+      "SQL",
+      "Spring",
+      "REST API",
+      "Microservices",
+      "Oracle"
+    ],
+    "confidence_score": 0.7955
+  },
+  {
+    "id": "e3109af2-aef2-4005-b7cb-9bdcb4fb0fcb",
+    "name": "Maria Garcia",
+    "name_confidence": "HIGH",
+    "email": "maria.garcia@workmail.com",
+    "email_confidence": "HIGH",
+    "current_company": "Meta",
+    "current_company_confidence": "HIGH",
+    "years_of_experience": 4.0,
+    "years_of_experience_confidence": "HIGH",
+    "skills": [
+      "React",
+      "TypeScript",
+      "Node.js"
+    ],
+    "confidence_score": 1.0
+  },
+  {
+    "id": "eb3657fe-818d-4f46-9c3b-34263f602a0e",
+    "name": "Alex Chen",
+    "name_confidence": "HIGH",
+    "email": "alex.chen@example.com",
+    "email_confidence": "HIGH",
+    "current_company": "Microsoft",
+    "current_company_confidence": "HIGH",
+    "years_of_experience": 3.0,
+    "years_of_experience_confidence": "HIGH",
+    "skills": [
+      "SQL",
+      "Tableau",
+      "Python"
+    ],
+    "confidence_score": 1.0
+  },
+  {
+    "id": "08200b68-0031-496a-b5f4-0de8246b7ddd",
+    "name": "Wei Zhang",
+    "name_confidence": "MEDIUM",
+    "email": "wei.zhang@example.com",
+    "email_confidence": "HIGH",
+    "current_company": "Microsoft",
+    "current_company_confidence": "MEDIUM",
+    "years_of_experience": 5.9,
+    "years_of_experience_confidence": "LOW",
+    "skills": [
+      "Python",
+      "Pandas",
+      "TensorFlow",
+      "PyTorch",
+      "Scikit-learn"
+    ],
+    "confidence_score": 0.6917
+  }
+]
