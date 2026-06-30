@@ -42,15 +42,98 @@ The pipeline is designed to fail gracefully while maintaining deterministic proc
 
 ```text
 candidate-canonicalization/
-├── src/
+│
 ├── config/
+│   ├── default.yaml                # Default pipeline configuration
+│   └── production.yaml             # Production configuration overrides
+│
 ├── data/
 │   ├── input/
-│   └── output/
-├── tests/
-├── requirements.txt
-├── main.py
-└── README.md
+│   │   ├── csv/                    # Sample recruiter CSV files
+│   │   └── resumes/                # Sample resume PDFs
+│   │
+│   ├── output/                     # Generated pipeline outputs
+│   │   ├── canonical_profiles.json
+│   │   ├── projected_profiles.json
+│   │   ├── canonical_profiles.csv
+│   │   ├── canonical_profiles.xlsx
+│   │   ├── report.json
+│   │   └── report.txt
+│   │
+│   ├── projections/                # Runtime projection configurations
+│   │   └── recruiter_summary.json
+│   │
+│   ├── schemas/
+│   │   └── schema.json             # JSON schema for validation
+│   │
+│   └── taxonomies/                 # Reference datasets
+│       ├── companies.json
+│       ├── job_titles.json
+│       └── skills.json
+│
+├── logs/                           # Pipeline log files (generated)
+│
+├── scripts/
+│   └── generate_sample_data.py     # Generates sample recruiter data
+│
+├── src/
+│   │
+│   ├── cli/
+│   │   └── commands.py             # CLI command definitions
+│   │
+│   ├── pipeline/
+│   │   ├── orchestrator.py         # Pipeline execution controller
+│   │   └── config.py               # Configuration loader
+│   │
+│   ├── parsers/
+│   │   ├── csv_parser.py           # Recruiter CSV parser
+│   │   ├── resume_parser.py        # Resume PDF parser
+│   │   └── resume_extractors.py    # Regex/heuristic information extraction
+│   │
+│   ├── normalizers/
+│   │   ├── email.py
+│   │   ├── phone.py
+│   │   ├── skills.py
+│   │   ├── company.py
+│   │   ├── date.py
+│   │   └── experience.py
+│   │
+│   ├── merge/
+│   │   ├── merge_engine.py         # Candidate profile merging
+│   │   ├── deduplicator.py         # Duplicate candidate detection
+│   │   └── conflict_resolver.py    # Conflict resolution strategies
+│   │
+│   ├── models/
+│   │   ├── candidate.py            # Canonical candidate model
+│   │   ├── provenance.py           # Provenance model
+│   │   └── confidence.py           # Confidence model
+│   │
+│   ├── services/
+│   │   ├── validator.py            # Validation service
+│   │   ├── provenance_service.py   # Provenance generation
+│   │   └── confidence_service.py   # Confidence calculation
+│   │
+│   ├── projection/
+│   │   └── projection_engine.py    # Runtime projection engine
+│   │
+│   ├── output/
+│   │   ├── json_exporter.py
+│   │   ├── csv_exporter.py
+│   │   ├── excel_exporter.py
+│   │   └── report_generator.py     # Processing reports
+│   │
+│   └── utils/
+│       ├── logger.py               # Logging utilities
+│       ├── helpers.py
+│       └── validators.py
+│
+├── tests/                          # Unit and integration tests
+│
+├── main.py                         # CLI entry point
+├── requirements.txt                # Python dependencies
+├── setup.py                        # Package configuration
+├── README.md                       # Project documentation
+└── .gitignore
 ```
 
 ---
