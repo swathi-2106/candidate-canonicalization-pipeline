@@ -116,6 +116,8 @@ Key options:
 | `--projection PATH` | JSON projection spec (see below) |
 | `--schema PATH` | JSON Schema to validate output against |
 | `--parallel/--no-parallel` | Toggle concurrent file processing (default on) |
+| `--validate-only` | Parse and validate inputs, write only validation reports |
+| `--dry-run` | Execute the full pipeline without writing output artifacts or file logs |
 | `-v/--verbose`, `-q/--quiet` | Logging verbosity |
 
 Other commands:
@@ -123,6 +125,25 @@ Other commands:
 python main.py inspect-csv data/input/csv/recruiter_export_1.csv
 python main.py inspect-resume data/input/resumes/jane_doe_resume.pdf
 ```
+
+Validation-only mode:
+```bash
+python main.py run --csv-dir data/input/csv --resume-dir data/input/resumes --validate-only
+```
+
+Dry-run mode:
+```bash
+python main.py run --csv-dir data/input/csv --resume-dir data/input/resumes --dry-run
+```
+
+Environment variables are optional defaults loaded from `.env` when `python-dotenv` is installed. CLI flags take highest priority, explicit config files take precedence over environment defaults, and the pipeline behaves as before when no `.env` file is present. Supported values include `DEFAULT_PHONE_COUNTRY`, `PIPELINE_CONFIG_PATH`, `LOG_LEVEL`, `LOG_FILE`, `RESUME_USE_NER`, and `RESUME_NER_MODEL`.
+
+Optional OCR and NER support are disabled unless their dependencies/configuration are available:
+```bash
+pip install -e ".[ocr]"
+pip install -e ".[ner]"
+```
+OCR is attempted only when a PDF has no extractable text. NER enhances resume extraction only when `use_ner: true` or `RESUME_USE_NER=true`; regex extraction remains the default and fallback.
 
 ## Configurable column mapping (CSV)
 

@@ -35,8 +35,10 @@ class ResumeParser:
     NER backend - see resume_extractors.py docstring for rationale).
     """
 
-    def __init__(self, use_ner: bool = True, skill_taxonomy: Optional[List[str]] = None):
+    def __init__(self, use_ner: bool = False, skill_taxonomy: Optional[List[str]] = None, ner_model: Optional[str] = None):
         self.use_ner = use_ner
+        self.ner_model = ner_model or "en_core_web_sm"
+        self._nlp = None
         flat_taxonomy = skill_taxonomy or [s for group in DEFAULT_TAXONOMY.values() for s in group]
         self.skill_taxonomy = flat_taxonomy
         self.email_normalizer = EmailNormalizer()
@@ -183,7 +185,8 @@ class ResumeParser:
         return profile
 
     def _extract_text(self, file_path: str) -> str:
-        """Extract text from PDF, preferring pdfplumber, falling back to pypdf."""
+        """Extract text from PDF, preferring native text and falling back to optional OCR."""
+        text = ""
         if HAS_PDFPLUMBER:
             try:
                 text_parts = []
@@ -197,17 +200,65 @@ class ResumeParser:
             except Exception as e:
                 logger.warning("pdfplumber failed on %s: %s, falling back to pypdf", file_path, e)
         if HAS_PYPDF:
-            reader = PdfReader(file_path)
-            return "\n".join((page.extract_text() or "") for page in reader.pages)
-        raise RuntimeError("No PDF extraction library available (pdfplumber/pypdf)")
+            try:
+                reader = PdfReader(file_path)
+                text = "\n".join((page.extract_text() or "") for page in reader.pages)
+                if text.strip():
+                    return text
+            except Exception as e:
+                logger.warning("pypdf failed on %s: %s, falling back to OCR if available", file_path, e)
+
+        ocr_text = self._extract_text_with_ocr(file_path)
+        if ocr_text.strip():
+            return ocr_text
+        if not HAS_PDFPLUMBER and not HAS_PYPDF:
+            raise RuntimeError("No PDF extraction library available (pdfplumber/pypdf)")
+        return text
+
+    def _extract_text_with_ocr(self, file_path: str) -> str:
+        try:
+            from pdf2image import convert_from_path
+            import pytesseract
+        except ImportError:
+            msg = f"OCR dependencies unavailable for {file_path}; install pdf2image and pytesseract to process scanned PDFs"
+            logger.warning(msg)
+            self.errors.append(msg)
+            return ""
+
+        try:
+            pages = convert_from_path(file_path)
+            return "\n".join(pytesseract.image_to_string(page) for page in pages)
+        except Exception as e:
+            msg = f"OCR failed for {file_path}: {e}"
+            logger.warning(msg)
+            self.errors.append(msg)
+            return ""
 
     def _extract_contact(self, text: str) -> Dict:
-        return {
+        contact = {
             "name": ex.extract_name(text),
             "email": ex.extract_email(text),
             "phone": ex.extract_phone(text),
             "linkedin": ex.extract_linkedin(text),
         }
+        return self._enhance_contact_with_ner(text, contact)
+
+    def _enhance_contact_with_ner(self, text: str, contact: Dict) -> Dict:
+        if not self.use_ner:
+            return contact
+        try:
+            if self._nlp is None:
+                import spacy
+                self._nlp = spacy.load(self.ner_model)
+            doc = self._nlp("\n".join(text.splitlines()[:20]))
+            if not contact.get("name"):
+                person = next((ent.text.strip() for ent in doc.ents if ent.label_ == "PERSON"), None)
+                if person:
+                    contact["name"] = person
+        except Exception as e:
+            msg = f"NER extraction unavailable; falling back to regex resume parsing: {e}"
+            logger.info(msg)
+        return contact
 
     def _extract_skills(self, text: str) -> List[str]:
         sections = ex.split_sections(text)

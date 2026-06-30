@@ -10,6 +10,7 @@ setup(
         "pandas>=2.0.0",
         "click>=8.1.0",
         "PyYAML>=6.0",
+        "python-dotenv>=1.0.0",
         "pdfplumber>=0.10.0",
         "pypdf>=4.0.0",
         "phonenumbers>=8.13.0",
@@ -21,6 +22,10 @@ setup(
         "openpyxl>=3.1.0",
         "rich>=13.3.0",
     ],
+    extras_require={
+        "ocr": ["pdf2image>=1.16.0", "pytesseract>=0.3.10"],
+        "ner": ["spacy>=3.7.0"],
+    },
     entry_points={
         "console_scripts": [
             "candidate-pipeline=src.cli.commands:main",

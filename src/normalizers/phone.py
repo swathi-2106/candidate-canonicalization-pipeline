@@ -1,5 +1,6 @@
 """Phone number normalization using libphonenumber (phonenumbers package)."""
 import logging
+import os
 
 try:
     import phonenumbers
@@ -14,12 +15,13 @@ logger = logging.getLogger(__name__)
 class PhoneNormalizer:
     """Normalizes phone numbers to E.164 international format."""
 
-    def normalize(self, phone: str, country_code: str = "US") -> str:
+    def normalize(self, phone: str, country_code: str = None) -> str:
         """Return normalized phone number in E.164 format, or the cleaned
         original string if it cannot be parsed."""
         if not phone or not str(phone).strip():
             return ""
         raw = str(phone).strip()
+        country_code = country_code or os.getenv("DEFAULT_PHONE_COUNTRY", "US")
 
         if not HAS_PHONENUMBERS:
             return self._fallback_clean(raw)
@@ -33,9 +35,10 @@ class PhoneNormalizer:
             logger.debug("Could not parse phone number: %s", raw)
             return self._fallback_clean(raw)
 
-    def is_valid(self, phone: str, country_code: str = "US") -> bool:
+    def is_valid(self, phone: str, country_code: str = None) -> bool:
         if not phone:
             return False
+        country_code = country_code or os.getenv("DEFAULT_PHONE_COUNTRY", "US")
         if not HAS_PHONENUMBERS:
             digits = "".join(c for c in phone if c.isdigit())
             return 7 <= len(digits) <= 15

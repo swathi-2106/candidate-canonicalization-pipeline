@@ -1,23 +1,23 @@
 ============================================================
 CANDIDATE CANONICALIZATION PIPELINE - PROCESSING REPORT
 ============================================================
-Run started:  2026-06-30T18:01:27.649924
-Run finished: 2026-06-30T18:01:40.586512
-Duration:     12.937s
+Run started:  2026-06-30T18:57:05.198204
+Run finished: 2026-06-30T18:57:06.018052
+Duration:     0.82s
 
 -- Input --
-CSV records parsed: 6
-Resumes parsed:     3
+CSV records parsed: 7
+Resumes parsed:     5
 
 -- Output --
-Total profiles:    7
-Valid profiles:    7
-Invalid profiles:  0
-By origin:         {'CSV': 4, 'RESUME_PDF': 1, 'MERGED': 2}
-Average confidence:0.8997
+Total profiles:    10
+Valid profiles:    9
+Invalid profiles:  1
+By origin:         {'CSV': 5, 'RESUME_PDF': 3, 'MERGED': 2}
+Average confidence:0.8678
 
 -- Validation --
-Total warnings: 4
+Total warnings: 7
 
 -- Errors --
 Error count: 0

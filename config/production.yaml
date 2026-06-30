@@ -25,3 +25,9 @@ max_workers: 8
 verbose: false
 quiet: true
 log_file: /var/log/candidate-pipeline/pipeline.log
+
+validate_only: false
+dry_run: false
+
+use_ner: false
+ner_model: en_core_web_sm

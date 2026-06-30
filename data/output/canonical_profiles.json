@@ -1,6 +1,6 @@
 [
   {
-    "profile_id": "276a5d90-7100-42d0-9b02-9c7c5b9673be",
+    "profile_id": "5a4cfa69-178e-45f8-8b82-0bc8a9b5a819",
     "name": {
       "value": "Priya Patel",
       "confidence": "HIGH",
@@ -10,7 +10,7 @@
         "original_value": "Priya Patel",
         "transformation": null,
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:28.173880"
+        "timestamp": "2026-06-30T18:57:05.208426"
       }
     },
     "email": {
@@ -22,7 +22,7 @@
         "original_value": "priya.patel@example.com",
         "transformation": "lowercase+trim",
         "transformed_value": "priya.patel@example.com",
-        "timestamp": "2026-06-30T18:01:28.201397"
+        "timestamp": "2026-06-30T18:57:05.208570"
       }
     },
     "contact": {
@@ -35,7 +35,7 @@
           "original_value": "priya.patel@example.com",
           "transformation": "lowercase+trim",
           "transformed_value": "priya.patel@example.com",
-          "timestamp": "2026-06-30T18:01:28.201397"
+          "timestamp": "2026-06-30T18:57:05.208570"
         }
       },
       "phone": {
@@ -47,7 +47,7 @@
           "original_value": "408-555-0166",
           "transformation": "E.164 normalize",
           "transformed_value": "+14085550166",
-          "timestamp": "2026-06-30T18:01:28.244928"
+          "timestamp": "2026-06-30T18:57:05.212318"
         }
       },
       "linkedin": null,
@@ -63,7 +63,7 @@
           "original_value": "Go",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.245078"
+          "timestamp": "2026-06-30T18:57:05.212470"
         }
       },
       {
@@ -75,7 +75,7 @@
           "original_value": "gRPC",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.245082"
+          "timestamp": "2026-06-30T18:57:05.212476"
         }
       },
       {
@@ -87,7 +87,7 @@
           "original_value": "PostgreSQL",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.245084"
+          "timestamp": "2026-06-30T18:57:05.212478"
         }
       }
     ],
@@ -96,7 +96,7 @@
     "source_files": [
       "data\\input\\csv\\recruiter_export_2.csv"
     ],
-    "processing_timestamp": "2026-06-30T18:01:28.245138",
+    "processing_timestamp": "2026-06-30T18:57:05.212581",
     "total_confidence": 1.0,
     "merge_notes": [],
     "current_company": {
@@ -108,7 +108,7 @@
         "original_value": "IBM",
         "transformation": null,
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:28.245090"
+        "timestamp": "2026-06-30T18:57:05.212486"
       }
     },
     "years_of_experience": {
@@ -120,7 +120,7 @@
         "original_value": "6",
         "transformation": "to_float",
         "transformed_value": 6.0,
-        "timestamp": "2026-06-30T18:01:28.245096"
+        "timestamp": "2026-06-30T18:57:05.212525"
       }
     },
     "job_titles": [
@@ -133,7 +133,7 @@
           "original_value": "Platform Engineer",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.245087"
+          "timestamp": "2026-06-30T18:57:05.212483"
         }
       }
     ],
@@ -141,7 +141,7 @@
     "origin": "CSV"
   },
   {
-    "profile_id": "69be6aaa-e8d9-4ea0-9fd5-30060a4c60e8",
+    "profile_id": "6fd982e3-aa48-4da8-b54f-f991cd6e8287",
     "name": {
       "value": "Tom Becker",
       "confidence": "HIGH",
@@ -151,7 +151,7 @@
         "original_value": "Tom Becker",
         "transformation": null,
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:28.245461"
+        "timestamp": "2026-06-30T18:57:05.212873"
       }
     },
     "email": {
@@ -163,7 +163,7 @@
         "original_value": "tom.becker@example.com",
         "transformation": "lowercase+trim",
         "transformed_value": "tom.becker@example.com",
-        "timestamp": "2026-06-30T18:01:28.245701"
+        "timestamp": "2026-06-30T18:57:05.213051"
       }
     },
     "contact": {
@@ -176,7 +176,7 @@
           "original_value": "tom.becker@example.com",
           "transformation": "lowercase+trim",
           "transformed_value": "tom.becker@example.com",
-          "timestamp": "2026-06-30T18:01:28.245701"
+          "timestamp": "2026-06-30T18:57:05.213051"
         }
       },
       "phone": {
@@ -188,7 +188,7 @@
           "original_value": "312-555-0121",
           "transformation": "E.164 normalize",
           "transformed_value": "+13125550121",
-          "timestamp": "2026-06-30T18:01:28.245816"
+          "timestamp": "2026-06-30T18:57:05.213180"
         }
       },
       "linkedin": null,
@@ -204,7 +204,7 @@
           "original_value": "C++",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.245901"
+          "timestamp": "2026-06-30T18:57:05.213265"
         }
       },
       {
@@ -216,7 +216,7 @@
           "original_value": "Linux",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.245905"
+          "timestamp": "2026-06-30T18:57:05.213268"
         }
       },
       {
@@ -228,7 +228,7 @@
           "original_value": "Embedded Systems",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.245907"
+          "timestamp": "2026-06-30T18:57:05.213279"
         }
       }
     ],
@@ -237,7 +237,7 @@
     "source_files": [
       "data\\input\\csv\\recruiter_export_2.csv"
     ],
-    "processing_timestamp": "2026-06-30T18:01:28.245951",
+    "processing_timestamp": "2026-06-30T18:57:05.213323",
     "total_confidence": 1.0,
     "merge_notes": [],
     "current_company": {
@@ -249,7 +249,7 @@
         "original_value": "Apple",
         "transformation": null,
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:28.245914"
+        "timestamp": "2026-06-30T18:57:05.213286"
       }
     },
     "years_of_experience": {
@@ -261,7 +261,7 @@
         "original_value": "9",
         "transformation": "to_float",
         "transformed_value": 9.0,
-        "timestamp": "2026-06-30T18:01:28.245919"
+        "timestamp": "2026-06-30T18:57:05.213292"
       }
     },
     "job_titles": [
@@ -274,7 +274,7 @@
           "original_value": "Systems Engineer",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.245910"
+          "timestamp": "2026-06-30T18:57:05.213283"
         }
       }
     ],
@@ -282,7 +282,7 @@
     "origin": "CSV"
   },
   {
-    "profile_id": "4e2ad209-3c46-4aef-8df9-b841657cef22",
+    "profile_id": "49895727-f6bc-4435-b4c5-6c3664275f21",
     "name": {
       "value": "Jane Doe",
       "confidence": "HIGH",
@@ -295,7 +295,7 @@
         ],
         "transformation": "agreement_merge",
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:29.381361"
+        "timestamp": "2026-06-30T18:57:05.535283"
       }
     },
     "email": {
@@ -310,7 +310,7 @@
         ],
         "transformation": "agreement_merge",
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:29.381373"
+        "timestamp": "2026-06-30T18:57:05.535289"
       }
     },
     "contact": {
@@ -326,7 +326,7 @@
           ],
           "transformation": "agreement_merge",
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:29.381382"
+          "timestamp": "2026-06-30T18:57:05.535292"
         }
       },
       "phone": {
@@ -341,7 +341,7 @@
           ],
           "transformation": "agreement_merge",
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:29.381387"
+          "timestamp": "2026-06-30T18:57:05.535294"
         }
       },
       "linkedin": {
@@ -356,7 +356,7 @@
           ],
           "transformation": "agreement_merge",
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:29.381391"
+          "timestamp": "2026-06-30T18:57:05.535296"
         }
       },
       "address": null
@@ -371,7 +371,7 @@
           "original_value": "Python",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.240900"
+          "timestamp": "2026-06-30T18:57:05.213566"
         }
       },
       {
@@ -383,7 +383,7 @@
           "original_value": "Django",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.240904"
+          "timestamp": "2026-06-30T18:57:05.213568"
         }
       },
       {
@@ -395,7 +395,7 @@
           "original_value": "AWS",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.240906"
+          "timestamp": "2026-06-30T18:57:05.213569"
         }
       },
       {
@@ -407,7 +407,7 @@
           "original_value": "Docker",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.240909"
+          "timestamp": "2026-06-30T18:57:05.213571"
         }
       },
       {
@@ -419,7 +419,7 @@
           "original_value": "React",
           "transformation": "taxonomy_map",
           "transformed_value": "React",
-          "timestamp": "2026-06-30T18:01:28.364998"
+          "timestamp": "2026-06-30T18:57:05.254695"
         }
       },
       {
@@ -431,7 +431,7 @@
           "original_value": "Kubernetes",
           "transformation": "taxonomy_map",
           "transformed_value": "Kubernetes",
-          "timestamp": "2026-06-30T18:01:28.365008"
+          "timestamp": "2026-06-30T18:57:05.254700"
         }
       },
       {
@@ -443,7 +443,7 @@
           "original_value": "PostgreSQL",
           "transformation": "taxonomy_map",
           "transformed_value": "PostgreSQL",
-          "timestamp": "2026-06-30T18:01:28.365010"
+          "timestamp": "2026-06-30T18:57:05.254702"
         }
       },
       {
@@ -455,7 +455,7 @@
           "original_value": "Microservices",
           "transformation": "taxonomy_map",
           "transformed_value": "Microservices",
-          "timestamp": "2026-06-30T18:01:28.365013"
+          "timestamp": "2026-06-30T18:57:05.254703"
         }
       }
     ],
@@ -470,7 +470,7 @@
             "original_value": "Google",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.172724"
+            "timestamp": "2026-06-30T18:57:05.522772"
           }
         },
         "title": {
@@ -482,7 +482,7 @@
             "original_value": "Senior Software Engineer",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.172726"
+            "timestamp": "2026-06-30T18:57:05.522774"
           }
         },
         "start_date": {
@@ -494,7 +494,7 @@
             "original_value": "Jan 2021",
             "transformation": "date_normalize",
             "transformed_value": "2021-01",
-            "timestamp": "2026-06-30T18:01:29.172715"
+            "timestamp": "2026-06-30T18:57:05.522766"
           }
         },
         "end_date": {
@@ -506,7 +506,7 @@
             "original_value": "Present",
             "transformation": "date_normalize",
             "transformed_value": "PRESENT",
-            "timestamp": "2026-06-30T18:01:29.172722"
+            "timestamp": "2026-06-30T18:57:05.522770"
           }
         },
         "description": {
@@ -518,7 +518,7 @@
             "original_value": "Jan 2021 - Present\nLed backend services migration to microservices architecture using Docker and Kubernetes.\nSoftware Engineer at Salesforce\nJun 2017 - Dec 2020\nBuilt internal tools using Python and Django, improved deployment pipeline with AWS.",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.172730"
+            "timestamp": "2026-06-30T18:57:05.522776"
           }
         },
         "current": true
@@ -535,7 +535,7 @@
             "original_value": "Stanford University",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.172738"
+            "timestamp": "2026-06-30T18:57:05.522780"
           }
         },
         "degree": {
@@ -547,7 +547,7 @@
             "original_value": "Bachelor of Science in Computer Science",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.172741"
+            "timestamp": "2026-06-30T18:57:05.522781"
           }
         },
         "field_of_study": null,
@@ -560,7 +560,7 @@
             "original_value": "2017",
             "transformation": "date_normalize",
             "transformed_value": "2017-06",
-            "timestamp": "2026-06-30T18:01:29.181778"
+            "timestamp": "2026-06-30T18:57:05.526781"
           }
         }
       }
@@ -569,9 +569,10 @@
       "data\\input\\csv\\recruiter_export_1.csv",
       "data\\input\\resumes\\jane_doe_resume.pdf"
     ],
-    "processing_timestamp": "2026-06-30T18:01:29.381486",
+    "processing_timestamp": "2026-06-30T18:57:05.535341",
     "total_confidence": 0.8104,
     "merge_notes": [
+      "Duplicate match: same normalized email.",
       "'name' agreed across CSV and resume; confidence boosted to HIGH.",
       "'skills' unioned from CSV (4) and resume (8) -> 8 unique.",
       "'job_titles' unioned from CSV (1) and resume (1) -> 1 unique.",
@@ -590,7 +591,7 @@
         ],
         "transformation": "agreement_merge",
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:29.381450"
+        "timestamp": "2026-06-30T18:57:05.535326"
       }
     },
     "years_of_experience": {
@@ -605,7 +606,7 @@
         ],
         "transformation": "conflict_resolution:longest",
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:29.381473"
+        "timestamp": "2026-06-30T18:57:05.535335"
       }
     },
     "job_titles": [
@@ -618,7 +619,7 @@
           "original_value": "Senior Software Engineer",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.240912"
+          "timestamp": "2026-06-30T18:57:05.213573"
         }
       }
     ],
@@ -632,7 +633,7 @@
           "original_value": "AWS Certified Solutions Architect",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:29.181858"
+          "timestamp": "2026-06-30T18:57:05.526833"
         }
       },
       {
@@ -644,14 +645,14 @@
           "original_value": "Certified Kubernetes Administrator",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:29.181861"
+          "timestamp": "2026-06-30T18:57:05.526836"
         }
       }
     ],
     "origin": "MERGED"
   },
   {
-    "profile_id": "12546258-f05e-4f54-b8fe-7ab0ef42ba22",
+    "profile_id": "ec58b2f0-938a-455e-914f-b7f2060bc0f4",
     "name": {
       "value": "John Smith",
       "confidence": "HIGH",
@@ -664,7 +665,7 @@
         ],
         "transformation": "agreement_merge",
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:29.381497"
+        "timestamp": "2026-06-30T18:57:05.535354"
       }
     },
     "email": {
@@ -679,7 +680,7 @@
         ],
         "transformation": "agreement_merge",
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:29.381500"
+        "timestamp": "2026-06-30T18:57:05.535356"
       }
     },
     "contact": {
@@ -695,7 +696,7 @@
           ],
           "transformation": "agreement_merge",
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:29.381505"
+          "timestamp": "2026-06-30T18:57:05.535359"
         }
       },
       "phone": {
@@ -710,7 +711,7 @@
           ],
           "transformation": "agreement_merge",
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:29.381508"
+          "timestamp": "2026-06-30T18:57:05.535360"
         }
       },
       "linkedin": {
@@ -722,7 +723,7 @@
           "original_value": "linkedin.com/in/johnsmith",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.242963"
+          "timestamp": "2026-06-30T18:57:05.214171"
         }
       },
       "address": null
@@ -737,7 +738,7 @@
           "original_value": "Java",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.242977"
+          "timestamp": "2026-06-30T18:57:05.214176"
         }
       },
       {
@@ -749,7 +750,7 @@
           "original_value": "Spring Boot",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.242980"
+          "timestamp": "2026-06-30T18:57:05.214177"
         }
       },
       {
@@ -761,7 +762,7 @@
           "original_value": "Kubernetes",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.242982"
+          "timestamp": "2026-06-30T18:57:05.214178"
         }
       },
       {
@@ -773,7 +774,7 @@
           "original_value": "SQL",
           "transformation": "taxonomy_map",
           "transformed_value": "SQL",
-          "timestamp": "2026-06-30T18:01:28.505202"
+          "timestamp": "2026-06-30T18:57:05.285808"
         }
       },
       {
@@ -785,7 +786,7 @@
           "original_value": "Spring",
           "transformation": "taxonomy_map",
           "transformed_value": "Spring",
-          "timestamp": "2026-06-30T18:01:28.505205"
+          "timestamp": "2026-06-30T18:57:05.285809"
         }
       },
       {
@@ -797,7 +798,7 @@
           "original_value": "REST API",
           "transformation": "taxonomy_map",
           "transformed_value": "REST API",
-          "timestamp": "2026-06-30T18:01:28.505212"
+          "timestamp": "2026-06-30T18:57:05.285814"
         }
       },
       {
@@ -809,7 +810,7 @@
           "original_value": "Microservices",
           "transformation": "taxonomy_map",
           "transformed_value": "Microservices",
-          "timestamp": "2026-06-30T18:01:28.505215"
+          "timestamp": "2026-06-30T18:57:05.285815"
         }
       },
       {
@@ -821,7 +822,7 @@
           "original_value": "Oracle",
           "transformation": "taxonomy_map",
           "transformed_value": "Oracle",
-          "timestamp": "2026-06-30T18:01:28.505217"
+          "timestamp": "2026-06-30T18:57:05.285816"
         }
       }
     ],
@@ -836,7 +837,7 @@
             "original_value": "Amazon",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.172242"
+            "timestamp": "2026-06-30T18:57:05.522520"
           }
         },
         "title": {
@@ -848,7 +849,7 @@
             "original_value": "Backend Engineer",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.172246"
+            "timestamp": "2026-06-30T18:57:05.522521"
           }
         },
         "start_date": {
@@ -860,7 +861,7 @@
             "original_value": "Mar 2019",
             "transformation": "date_normalize",
             "transformed_value": "2019-03",
-            "timestamp": "2026-06-30T18:01:29.172230"
+            "timestamp": "2026-06-30T18:57:05.522513"
           }
         },
         "end_date": {
@@ -872,7 +873,7 @@
             "original_value": "Present",
             "transformation": "date_normalize",
             "transformed_value": "PRESENT",
-            "timestamp": "2026-06-30T18:01:29.172239"
+            "timestamp": "2026-06-30T18:57:05.522517"
           }
         },
         "description": {
@@ -884,7 +885,7 @@
             "original_value": "Mar 2019 - Present\nDesigned scalable REST APIs and microservices for fulfillment systems.\nSoftware Developer at Oracle\nJul 2015 - Feb 2019\nMaintained legacy Java applications and migrated to Spring Boot.",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.172250"
+            "timestamp": "2026-06-30T18:57:05.522523"
           }
         },
         "current": true
@@ -901,7 +902,7 @@
             "original_value": "University of Michigan",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.172261"
+            "timestamp": "2026-06-30T18:57:05.522529"
           }
         },
         "degree": {
@@ -913,7 +914,7 @@
             "original_value": "Master of Science in Computer Science",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.172263"
+            "timestamp": "2026-06-30T18:57:05.522531"
           }
         },
         "field_of_study": null,
@@ -926,7 +927,7 @@
             "original_value": "2015",
             "transformation": "date_normalize",
             "transformed_value": "2015-06",
-            "timestamp": "2026-06-30T18:01:29.182922"
+            "timestamp": "2026-06-30T18:57:05.528743"
           }
         }
       }
@@ -935,9 +936,10 @@
       "data\\input\\csv\\recruiter_export_1.csv",
       "data\\input\\resumes\\john_smith_resume.pdf"
     ],
-    "processing_timestamp": "2026-06-30T18:01:29.381556",
+    "processing_timestamp": "2026-06-30T18:57:05.535386",
     "total_confidence": 0.7955,
     "merge_notes": [
+      "Duplicate match: same normalized email.",
       "'name' agreed across CSV and resume; confidence boosted to HIGH.",
       "'skills' unioned from CSV (3) and resume (8) -> 8 unique.",
       "'job_titles' unioned from CSV (1) and resume (1) -> 1 unique.",
@@ -956,7 +958,7 @@
         ],
         "transformation": "agreement_merge",
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:29.381539"
+        "timestamp": "2026-06-30T18:57:05.535376"
       }
     },
     "years_of_experience": {
@@ -971,7 +973,7 @@
         ],
         "transformation": "conflict_resolution:longest",
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:29.381549"
+        "timestamp": "2026-06-30T18:57:05.535382"
       }
     },
     "job_titles": [
@@ -984,7 +986,7 @@
           "original_value": "Backend Engineer",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.242985"
+          "timestamp": "2026-06-30T18:57:05.214180"
         }
       }
     ],
@@ -992,7 +994,7 @@
     "origin": "MERGED"
   },
   {
-    "profile_id": "e3109af2-aef2-4005-b7cb-9bdcb4fb0fcb",
+    "profile_id": "f298034e-c1b1-4f15-8cf7-f06587453a2b",
     "name": {
       "value": "Maria Garcia",
       "confidence": "HIGH",
@@ -1002,7 +1004,7 @@
         "original_value": "Maria Garcia",
         "transformation": null,
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:28.243388"
+        "timestamp": "2026-06-30T18:57:05.214399"
       }
     },
     "email": {
@@ -1014,7 +1016,7 @@
         "original_value": "maria.garcia@workmail.com",
         "transformation": "lowercase+trim",
         "transformed_value": "maria.garcia@workmail.com",
-        "timestamp": "2026-06-30T18:01:28.243662"
+        "timestamp": "2026-06-30T18:57:05.214528"
       }
     },
     "contact": {
@@ -1027,7 +1029,7 @@
           "original_value": "maria.garcia@workmail.com",
           "transformation": "lowercase+trim",
           "transformed_value": "maria.garcia@workmail.com",
-          "timestamp": "2026-06-30T18:01:28.243662"
+          "timestamp": "2026-06-30T18:57:05.214528"
         }
       },
       "phone": {
@@ -1039,7 +1041,7 @@
           "original_value": "650-555-0143",
           "transformation": "E.164 normalize",
           "transformed_value": "+16505550143",
-          "timestamp": "2026-06-30T18:01:28.243810"
+          "timestamp": "2026-06-30T18:57:05.214596"
         }
       },
       "linkedin": null,
@@ -1055,7 +1057,7 @@
           "original_value": "React",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.243900"
+          "timestamp": "2026-06-30T18:57:05.214643"
         }
       },
       {
@@ -1067,7 +1069,7 @@
           "original_value": "TypeScript",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.243904"
+          "timestamp": "2026-06-30T18:57:05.214645"
         }
       },
       {
@@ -1079,7 +1081,7 @@
           "original_value": "Node.js",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.243906"
+          "timestamp": "2026-06-30T18:57:05.214646"
         }
       }
     ],
@@ -1088,7 +1090,7 @@
     "source_files": [
       "data\\input\\csv\\recruiter_export_1.csv"
     ],
-    "processing_timestamp": "2026-06-30T18:01:28.243958",
+    "processing_timestamp": "2026-06-30T18:57:05.214668",
     "total_confidence": 1.0,
     "merge_notes": [],
     "current_company": {
@@ -1100,7 +1102,7 @@
         "original_value": "Meta",
         "transformation": null,
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:28.243913"
+        "timestamp": "2026-06-30T18:57:05.214649"
       }
     },
     "years_of_experience": {
@@ -1112,7 +1114,7 @@
         "original_value": "4",
         "transformation": "to_float",
         "transformed_value": 4.0,
-        "timestamp": "2026-06-30T18:01:28.243920"
+        "timestamp": "2026-06-30T18:57:05.214652"
       }
     },
     "job_titles": [
@@ -1125,7 +1127,7 @@
           "original_value": "Frontend Engineer",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.243909"
+          "timestamp": "2026-06-30T18:57:05.214647"
         }
       }
     ],
@@ -1133,7 +1135,7 @@
     "origin": "CSV"
   },
   {
-    "profile_id": "eb3657fe-818d-4f46-9c3b-34263f602a0e",
+    "profile_id": "0c02b5c1-1d19-4589-9985-ebdf87b9779a",
     "name": {
       "value": "Alex Chen",
       "confidence": "HIGH",
@@ -1143,7 +1145,7 @@
         "original_value": "Alex Chen",
         "transformation": null,
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:28.244339"
+        "timestamp": "2026-06-30T18:57:05.214811"
       }
     },
     "email": {
@@ -1155,7 +1157,7 @@
         "original_value": "alex.chen@example.com",
         "transformation": "lowercase+trim",
         "transformed_value": "alex.chen@example.com",
-        "timestamp": "2026-06-30T18:01:28.246371"
+        "timestamp": "2026-06-30T18:57:05.214919"
       }
     },
     "contact": {
@@ -1168,7 +1170,7 @@
           "original_value": "alex.chen@example.com",
           "transformation": "lowercase+trim",
           "transformed_value": "alex.chen@example.com",
-          "timestamp": "2026-06-30T18:01:28.246371"
+          "timestamp": "2026-06-30T18:57:05.214919"
         }
       },
       "phone": {
@@ -1180,7 +1182,7 @@
           "original_value": "212-555-0177",
           "transformation": "E.164 normalize",
           "transformed_value": "+12125550177",
-          "timestamp": "2026-06-30T18:01:28.246484"
+          "timestamp": "2026-06-30T18:57:05.214975"
         }
       },
       "linkedin": {
@@ -1192,7 +1194,7 @@
           "original_value": "linkedin.com/in/alexchen",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.246560"
+          "timestamp": "2026-06-30T18:57:05.215015"
         }
       },
       "address": null
@@ -1207,7 +1209,7 @@
           "original_value": "SQL",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.246567"
+          "timestamp": "2026-06-30T18:57:05.215019"
         }
       },
       {
@@ -1219,7 +1221,7 @@
           "original_value": "Tableau",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.246569"
+          "timestamp": "2026-06-30T18:57:05.215026"
         }
       },
       {
@@ -1231,7 +1233,7 @@
           "original_value": "Python",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.246572"
+          "timestamp": "2026-06-30T18:57:05.215027"
         }
       }
     ],
@@ -1240,7 +1242,7 @@
     "source_files": [
       "data\\input\\csv\\recruiter_export_1.csv"
     ],
-    "processing_timestamp": "2026-06-30T18:01:28.246690",
+    "processing_timestamp": "2026-06-30T18:57:05.215047",
     "total_confidence": 1.0,
     "merge_notes": [],
     "current_company": {
@@ -1252,7 +1254,7 @@
         "original_value": "Microsoft",
         "transformation": null,
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:28.246619"
+        "timestamp": "2026-06-30T18:57:05.215031"
       }
     },
     "years_of_experience": {
@@ -1264,7 +1266,7 @@
         "original_value": "3",
         "transformation": "to_float",
         "transformed_value": 3.0,
-        "timestamp": "2026-06-30T18:01:28.246625"
+        "timestamp": "2026-06-30T18:57:05.215033"
       }
     },
     "job_titles": [
@@ -1277,7 +1279,7 @@
           "original_value": "Data Analyst",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:28.246616"
+          "timestamp": "2026-06-30T18:57:05.215029"
         }
       }
     ],
@@ -1285,7 +1287,544 @@
     "origin": "CSV"
   },
   {
-    "profile_id": "08200b68-0031-496a-b5f4-0de8246b7ddd",
+    "profile_id": "d4f15326-1940-4cb4-9506-ace41a292d22",
+    "name": {
+      "value": "Swathi S",
+      "confidence": "HIGH",
+      "provenance": {
+        "source_type": "CSV",
+        "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+        "original_value": "Swathi S",
+        "transformation": null,
+        "transformed_value": null,
+        "timestamp": "2026-06-30T18:57:05.205385"
+      }
+    },
+    "email": {
+      "value": "swathirtcc27@gmail.com",
+      "confidence": "HIGH",
+      "provenance": {
+        "source_type": "CSV",
+        "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+        "original_value": "swathirtcc27@gmail.com",
+        "transformation": "lowercase+trim",
+        "transformed_value": "swathirtcc27@gmail.com",
+        "timestamp": "2026-06-30T18:57:05.208697"
+      }
+    },
+    "contact": {
+      "email": {
+        "value": "swathirtcc27@gmail.com",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "swathirtcc27@gmail.com",
+          "transformation": "lowercase+trim",
+          "transformed_value": "swathirtcc27@gmail.com",
+          "timestamp": "2026-06-30T18:57:05.208697"
+        }
+      },
+      "phone": {
+        "value": "+918072363364",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "+91 8072363364",
+          "transformation": "E.164 normalize",
+          "transformed_value": "+918072363364",
+          "timestamp": "2026-06-30T18:57:05.223029"
+        }
+      },
+      "linkedin": {
+        "value": "linkedin.com/in/swathi-s-cse",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "linkedin.com/in/swathi-s-cse",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223167"
+        }
+      },
+      "address": null
+    },
+    "skills": [
+      {
+        "value": "Java",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "Java",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223194"
+        }
+      },
+      {
+        "value": "Python",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "Python",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223196"
+        }
+      },
+      {
+        "value": "Spring Boot",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "Spring Boot",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223197"
+        }
+      },
+      {
+        "value": "REST APIs",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "REST APIs",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223198"
+        }
+      },
+      {
+        "value": "MySQL",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "MySQL",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223199"
+        }
+      },
+      {
+        "value": "PostgreSQL",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "PostgreSQL",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223200"
+        }
+      },
+      {
+        "value": "AWS",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "AWS",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223201"
+        }
+      },
+      {
+        "value": "Git",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "Git",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223202"
+        }
+      },
+      {
+        "value": "GitHub",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "GitHub",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223203"
+        }
+      },
+      {
+        "value": "Network Security",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "Network Security",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223205"
+        }
+      },
+      {
+        "value": "VAPT",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "VAPT",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223205"
+        }
+      },
+      {
+        "value": "Web Application Security",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "Web Application Security",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223206"
+        }
+      },
+      {
+        "value": "React",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "React",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223207"
+        }
+      }
+    ],
+    "experience": [],
+    "education": [],
+    "source_files": [
+      "data\\input\\csv\\recruiter_export_3.csv"
+    ],
+    "processing_timestamp": "2026-06-30T18:57:05.223252",
+    "total_confidence": 1.0,
+    "merge_notes": [],
+    "current_company": {
+      "value": "Internboot",
+      "confidence": "HIGH",
+      "provenance": {
+        "source_type": "CSV",
+        "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+        "original_value": "Internboot",
+        "transformation": null,
+        "transformed_value": null,
+        "timestamp": "2026-06-30T18:57:05.223211"
+      }
+    },
+    "years_of_experience": {
+      "value": 0.5,
+      "confidence": "HIGH",
+      "provenance": {
+        "source_type": "CSV",
+        "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+        "original_value": "0.5",
+        "transformation": "to_float",
+        "transformed_value": 0.5,
+        "timestamp": "2026-06-30T18:57:05.223216"
+      }
+    },
+    "job_titles": [
+      {
+        "value": "Cybersecurity Intern",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "CSV",
+          "source_file": "data\\input\\csv\\recruiter_export_3.csv",
+          "original_value": "Cybersecurity Intern",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.223209"
+        }
+      }
+    ],
+    "certifications": [],
+    "origin": "CSV"
+  },
+  {
+    "profile_id": "ad188cf9-82c0-44b4-81f7-21cb10063487",
+    "name": {
+      "value": "SWATHI S",
+      "confidence": "MEDIUM",
+      "provenance": {
+        "source_type": "RESUME_PDF",
+        "source_file": "data\\input\\resumes\\Swathi-S.pdf",
+        "original_value": "SWATHI S",
+        "transformation": null,
+        "transformed_value": null,
+        "timestamp": "2026-06-30T18:57:05.268394"
+      }
+    },
+    "email": {
+      "value": "",
+      "confidence": "UNKNOWN",
+      "provenance": {
+        "source_type": "RESUME_PDF",
+        "source_file": "data\\input\\resumes\\Swathi-S.pdf",
+        "original_value": "",
+        "transformation": null,
+        "transformed_value": null,
+        "timestamp": "2026-06-30T18:57:05.268403"
+      }
+    },
+    "contact": {
+      "email": {
+        "value": "",
+        "confidence": "UNKNOWN",
+        "provenance": {
+          "source_type": "RESUME_PDF",
+          "source_file": "data\\input\\resumes\\Swathi-S.pdf",
+          "original_value": "",
+          "transformation": null,
+          "transformed_value": null,
+          "timestamp": "2026-06-30T18:57:05.268403"
+        }
+      },
+      "phone": null,
+      "linkedin": null,
+      "address": null
+    },
+    "skills": [
+      {
+        "value": "AWS",
+        "confidence": "MEDIUM",
+        "provenance": {
+          "source_type": "RESUME_PDF",
+          "source_file": "data\\input\\resumes\\Swathi-S.pdf",
+          "original_value": "AWS",
+          "transformation": "taxonomy_map",
+          "transformed_value": "AWS",
+          "timestamp": "2026-06-30T18:57:05.268412"
+        }
+      }
+    ],
+    "experience": [],
+    "education": [],
+    "source_files": [
+      "data\\input\\resumes\\Swathi-S.pdf"
+    ],
+    "processing_timestamp": "2026-06-30T18:57:05.268449",
+    "total_confidence": 0.65,
+    "merge_notes": [],
+    "current_company": null,
+    "years_of_experience": null,
+    "job_titles": [],
+    "certifications": [],
+    "origin": "RESUME_PDF"
+  },
+  {
+    "profile_id": "1727d054-500e-4ad2-bf99-125f9b4a6343",
+    "name": {
+      "value": "ABINEETH T",
+      "confidence": "MEDIUM",
+      "provenance": {
+        "source_type": "RESUME_PDF",
+        "source_file": "data\\input\\resumes\\Abineeth_T.pdf",
+        "original_value": "ABINEETH T",
+        "transformation": null,
+        "transformed_value": null,
+        "timestamp": "2026-06-30T18:57:05.465007"
+      }
+    },
+    "email": {
+      "value": "abineeththangavel@gmail.com",
+      "confidence": "HIGH",
+      "provenance": {
+        "source_type": "RESUME_PDF",
+        "source_file": "data\\input\\resumes\\Abineeth_T.pdf",
+        "original_value": "abineeththangavel@gmail.com",
+        "transformation": "lowercase+trim",
+        "transformed_value": "abineeththangavel@gmail.com",
+        "timestamp": "2026-06-30T18:57:05.465152"
+      }
+    },
+    "contact": {
+      "email": {
+        "value": "abineeththangavel@gmail.com",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "RESUME_PDF",
+          "source_file": "data\\input\\resumes\\Abineeth_T.pdf",
+          "original_value": "abineeththangavel@gmail.com",
+          "transformation": "lowercase+trim",
+          "transformed_value": "abineeththangavel@gmail.com",
+          "timestamp": "2026-06-30T18:57:05.465152"
+        }
+      },
+      "phone": {
+        "value": "+919345646744",
+        "confidence": "HIGH",
+        "provenance": {
+          "source_type": "RESUME_PDF",
+          "source_file": "data\\input\\resumes\\Abineeth_T.pdf",
+          "original_value": "+919345646744",
+          "transformation": "E.164 normalize",
+          "transformed_value": "+919345646744",
+          "timestamp": "2026-06-30T18:57:05.465271"
+        }
+      },
+      "linkedin": null,
+      "address": null
+    },
+    "skills": [
+      {
+        "value": "Python",
+        "confidence": "MEDIUM",
+        "provenance": {
+          "source_type": "RESUME_PDF",
+          "source_file": "data\\input\\resumes\\Abineeth_T.pdf",
+          "original_value": "Python",
+          "transformation": "taxonomy_map",
+          "transformed_value": "Python",
+          "timestamp": "2026-06-30T18:57:05.465282"
+        }
+      },
+      {
+        "value": "Java",
+        "confidence": "MEDIUM",
+        "provenance": {
+          "source_type": "RESUME_PDF",
+          "source_file": "data\\input\\resumes\\Abineeth_T.pdf",
+          "original_value": "Java",
+          "transformation": "taxonomy_map",
+          "transformed_value": "Java",
+          "timestamp": "2026-06-30T18:57:05.465285"
+        }
+      },
+      {
+        "value": "Power BI",
+        "confidence": "MEDIUM",
+        "provenance": {
+          "source_type": "RESUME_PDF",
+          "source_file": "data\\input\\resumes\\Abineeth_T.pdf",
+          "original_value": "Power BI",
+          "transformation": "taxonomy_map",
+          "transformed_value": "Power BI",
+          "timestamp": "2026-06-30T18:57:05.465287"
+        }
+      },
+      {
+        "value": "Flask",
+        "confidence": "MEDIUM",
+        "provenance": {
+          "source_type": "RESUME_PDF",
+          "source_file": "data\\input\\resumes\\Abineeth_T.pdf",
+          "original_value": "Flask",
+          "transformation": "taxonomy_map",
+          "transformed_value": "Flask",
+          "timestamp": "2026-06-30T18:57:05.465288"
+        }
+      },
+      {
+        "value": "Pandas",
+        "confidence": "MEDIUM",
+        "provenance": {
+          "source_type": "RESUME_PDF",
+          "source_file": "data\\input\\resumes\\Abineeth_T.pdf",
+          "original_value": "Pandas",
+          "transformation": "taxonomy_map",
+          "transformed_value": "Pandas",
+          "timestamp": "2026-06-30T18:57:05.465290"
+        }
+      },
+      {
+        "value": "TensorFlow",
+        "confidence": "MEDIUM",
+        "provenance": {
+          "source_type": "RESUME_PDF",
+          "source_file": "data\\input\\resumes\\Abineeth_T.pdf",
+          "original_value": "TensorFlow",
+          "transformation": "taxonomy_map",
+          "transformed_value": "TensorFlow",
+          "timestamp": "2026-06-30T18:57:05.465291"
+        }
+      },
+      {
+        "value": "Scikit-learn",
+        "confidence": "MEDIUM",
+        "provenance": {
+          "source_type": "RESUME_PDF",
+          "source_file": "data\\input\\resumes\\Abineeth_T.pdf",
+          "original_value": "Scikit-learn",
+          "transformation": "taxonomy_map",
+          "transformed_value": "Scikit-learn",
+          "timestamp": "2026-06-30T18:57:05.465293"
+        }
+      }
+    ],
+    "experience": [],
+    "education": [
+      {
+        "institution": {
+          "value": "Sri Krishna Arts and Science College Jun 2023 - Apr 2026",
+          "confidence": "MEDIUM",
+          "provenance": {
+            "source_type": "RESUME_PDF",
+            "source_file": "data\\input\\resumes\\Abineeth_T.pdf",
+            "original_value": "Sri Krishna Arts and Science College Jun 2023 - Apr 2026",
+            "transformation": null,
+            "transformed_value": null,
+            "timestamp": "2026-06-30T18:57:05.465296"
+          }
+        },
+        "degree": {
+          "value": "Appin Technology, Coimbatore",
+          "confidence": "MEDIUM",
+          "provenance": {
+            "source_type": "RESUME_PDF",
+            "source_file": "data\\input\\resumes\\Abineeth_T.pdf",
+            "original_value": "Appin Technology, Coimbatore",
+            "transformation": null,
+            "transformed_value": null,
+            "timestamp": "2026-06-30T18:57:05.465297"
+          }
+        },
+        "field_of_study": null,
+        "graduation_date": {
+          "value": "2023-06",
+          "confidence": "MEDIUM",
+          "provenance": {
+            "source_type": "RESUME_PDF",
+            "source_file": "data\\input\\resumes\\Abineeth_T.pdf",
+            "original_value": "2023",
+            "transformation": "date_normalize",
+            "transformed_value": "2023-06",
+            "timestamp": "2026-06-30T18:57:05.519681"
+          }
+        }
+      }
+    ],
+    "source_files": [
+      "data\\input\\resumes\\Abineeth_T.pdf"
+    ],
+    "processing_timestamp": "2026-06-30T18:57:05.519808",
+    "total_confidence": 0.7308,
+    "merge_notes": [],
+    "current_company": null,
+    "years_of_experience": null,
+    "job_titles": [],
+    "certifications": [],
+    "origin": "RESUME_PDF"
+  },
+  {
+    "profile_id": "c0c15c97-41ac-4bd3-beb1-a6aacef9fbd6",
     "name": {
       "value": "Wei Zhang",
       "confidence": "MEDIUM",
@@ -1295,7 +1834,7 @@
         "original_value": "Wei Zhang",
         "transformation": null,
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:28.430710"
+        "timestamp": "2026-06-30T18:57:05.302814"
       }
     },
     "email": {
@@ -1307,7 +1846,7 @@
         "original_value": "wei.zhang@example.com",
         "transformation": "lowercase+trim",
         "transformed_value": "wei.zhang@example.com",
-        "timestamp": "2026-06-30T18:01:28.430991"
+        "timestamp": "2026-06-30T18:57:05.302948"
       }
     },
     "contact": {
@@ -1320,7 +1859,7 @@
           "original_value": "wei.zhang@example.com",
           "transformation": "lowercase+trim",
           "transformed_value": "wei.zhang@example.com",
-          "timestamp": "2026-06-30T18:01:28.430991"
+          "timestamp": "2026-06-30T18:57:05.302948"
         }
       },
       "phone": {
@@ -1332,7 +1871,7 @@
           "original_value": "(206) 555-0134",
           "transformation": "E.164 normalize",
           "transformed_value": "+12065550134",
-          "timestamp": "2026-06-30T18:01:28.431654"
+          "timestamp": "2026-06-30T18:57:05.303073"
         }
       },
       "linkedin": null,
@@ -1348,7 +1887,7 @@
           "original_value": "Python",
           "transformation": "taxonomy_map",
           "transformed_value": "Python",
-          "timestamp": "2026-06-30T18:01:28.431687"
+          "timestamp": "2026-06-30T18:57:05.303082"
         }
       },
       {
@@ -1360,7 +1899,7 @@
           "original_value": "Pandas",
           "transformation": "taxonomy_map",
           "transformed_value": "Pandas",
-          "timestamp": "2026-06-30T18:01:28.431691"
+          "timestamp": "2026-06-30T18:57:05.303085"
         }
       },
       {
@@ -1372,7 +1911,7 @@
           "original_value": "TensorFlow",
           "transformation": "taxonomy_map",
           "transformed_value": "TensorFlow",
-          "timestamp": "2026-06-30T18:01:28.431694"
+          "timestamp": "2026-06-30T18:57:05.303086"
         }
       },
       {
@@ -1384,7 +1923,7 @@
           "original_value": "PyTorch",
           "transformation": "taxonomy_map",
           "transformed_value": "PyTorch",
-          "timestamp": "2026-06-30T18:01:28.431696"
+          "timestamp": "2026-06-30T18:57:05.303088"
         }
       },
       {
@@ -1396,7 +1935,7 @@
           "original_value": "Scikit-learn",
           "transformation": "taxonomy_map",
           "transformed_value": "Scikit-learn",
-          "timestamp": "2026-06-30T18:01:28.431699"
+          "timestamp": "2026-06-30T18:57:05.303089"
         }
       }
     ],
@@ -1411,7 +1950,7 @@
             "original_value": "Microsoft",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.175354"
+            "timestamp": "2026-06-30T18:57:05.521623"
           }
         },
         "title": {
@@ -1423,7 +1962,7 @@
             "original_value": "Machine Learning Engineer",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.175356"
+            "timestamp": "2026-06-30T18:57:05.521626"
           }
         },
         "start_date": {
@@ -1435,7 +1974,7 @@
             "original_value": "Aug 2020",
             "transformation": "date_normalize",
             "transformed_value": "2020-08",
-            "timestamp": "2026-06-30T18:01:29.175341"
+            "timestamp": "2026-06-30T18:57:05.521610"
           }
         },
         "end_date": {
@@ -1447,7 +1986,7 @@
             "original_value": "Present",
             "transformation": "date_normalize",
             "transformed_value": "PRESENT",
-            "timestamp": "2026-06-30T18:01:29.175350"
+            "timestamp": "2026-06-30T18:57:05.521620"
           }
         },
         "description": {
@@ -1459,7 +1998,7 @@
             "original_value": "Aug 2020 - Present\nBuilt recommendation models serving millions of users.",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.175360"
+            "timestamp": "2026-06-30T18:57:05.521630"
           }
         },
         "current": true
@@ -1476,7 +2015,7 @@
             "original_value": "Carnegie Mellon University",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.175367"
+            "timestamp": "2026-06-30T18:57:05.521641"
           }
         },
         "degree": {
@@ -1488,7 +2027,7 @@
             "original_value": "Master of Science, Machine Learning",
             "transformation": null,
             "transformed_value": null,
-            "timestamp": "2026-06-30T18:01:29.175370"
+            "timestamp": "2026-06-30T18:57:05.521644"
           }
         },
         "field_of_study": null,
@@ -1501,7 +2040,7 @@
             "original_value": "2020",
             "transformation": "date_normalize",
             "transformed_value": "2020-06",
-            "timestamp": "2026-06-30T18:01:29.182588"
+            "timestamp": "2026-06-30T18:57:05.527944"
           }
         }
       }
@@ -1509,7 +2048,7 @@
     "source_files": [
       "data\\input\\resumes\\wei_zhang_resume.pdf"
     ],
-    "processing_timestamp": "2026-06-30T18:01:29.375630",
+    "processing_timestamp": "2026-06-30T18:57:05.534238",
     "total_confidence": 0.6917,
     "merge_notes": [],
     "current_company": {
@@ -1521,7 +2060,7 @@
         "original_value": "Microsoft",
         "transformation": null,
         "transformed_value": null,
-        "timestamp": "2026-06-30T18:01:29.175354"
+        "timestamp": "2026-06-30T18:57:05.521623"
       }
     },
     "years_of_experience": {
@@ -1533,7 +2072,7 @@
         "original_value": 5.9,
         "transformation": "derived_from_date_ranges",
         "transformed_value": 5.9,
-        "timestamp": "2026-06-30T18:01:29.375563"
+        "timestamp": "2026-06-30T18:57:05.534221"
       }
     },
     "job_titles": [
@@ -1546,7 +2085,7 @@
           "original_value": "Machine Learning Engineer",
           "transformation": null,
           "transformed_value": null,
-          "timestamp": "2026-06-30T18:01:29.175356"
+          "timestamp": "2026-06-30T18:57:05.521626"
         }
       }
     ],

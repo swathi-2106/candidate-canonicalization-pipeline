@@ -1,2 +1,7 @@
 2026-06-30 11:13:30 | INFO     | candidate_pipeline | Starting pipeline run | csv_dir=data/input/csv resume_dir=data/input/resumes output_dir=data/output formats=['json', 'csv', 'excel']
 2026-06-30 18:01:27 | INFO     | candidate_pipeline | Starting pipeline run | csv_dir=data/input/csv resume_dir=data/input/resumes output_dir=data/output formats=['json', 'csv', 'excel']
+2026-06-30 18:47:36 | INFO     | candidate_pipeline | Starting pipeline run | csv_dir=data/input/csv resume_dir=data/input/resumes output_dir=data/output formats=['json', 'csv', 'excel']
+2026-06-30 18:50:50 | INFO     | candidate_pipeline | Starting pipeline run | csv_dir=data/input/csv resume_dir=data/input/resumes output_dir=data/output formats=['json', 'csv', 'excel']
+2026-06-30 18:55:21 | INFO     | candidate_pipeline | Starting pipeline run | csv_dir=data/input/csv resume_dir=data/input/resumes output_dir=data/output formats=['json']
+2026-06-30 18:55:59 | INFO     | candidate_pipeline | Starting pipeline run | csv_dir=data/input/csv resume_dir=data/input/resumes output_dir=data/output formats=['json']
+2026-06-30 18:57:05 | INFO     | candidate_pipeline | Starting pipeline run | csv_dir=data/input/csv resume_dir=data/input/resumes output_dir=data/output formats=['json', 'csv', 'excel']

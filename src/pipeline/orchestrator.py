@@ -4,7 +4,7 @@ import logging
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import datetime
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 from src.pipeline.config import PipelineConfig
 from src.parsers.csv_parser import CSVParser
@@ -38,11 +38,14 @@ class PipelineOrchestrator:
         self.projection_engine = ProjectionEngine(spec=config.projection_spec)
 
         self.errors: List[str] = []
+        self.file_counts = {"csv_files": 0, "resume_files": 0}
 
     def run(self) -> dict:
         """Run the full pipeline. Returns the generated report dict."""
         started_at = datetime.now()
-        ensure_dir(self.config.output_dir)
+        self._validate_input_directories()
+        if not self.config.dry_run:
+            ensure_dir(self.config.output_dir)
 
         csv_profiles = self._parse_csv_files()
         resume_profiles = self._parse_resume_files()
@@ -50,8 +53,19 @@ class PipelineOrchestrator:
         all_profiles = csv_profiles + resume_profiles
         logger.info("Parsed %d CSV profile(s) and %d resume profile(s)", len(csv_profiles), len(resume_profiles))
 
+        if self.config.validate_only:
+            for profile in all_profiles:
+                profile.total_confidence = self.confidence_service.calculate_overall(profile)
+            validation_results = self.validator.validate_batch(all_profiles)
+            report = self._build_report(started_at, datetime.now(), all_profiles, validation_results,
+                                        len(csv_profiles), len(resume_profiles), merge_count=0)
+            if not self.config.dry_run:
+                self._write_validation_report(report)
+            return report
+
         merged_profiles = self.deduplicator.deduplicate(all_profiles, self.merge_engine)
         logger.info("After dedupe/merge: %d canonical profile(s)", len(merged_profiles))
+        merge_count = max(0, len(all_profiles) - len(merged_profiles))
 
         for profile in merged_profiles:
             profile.total_confidence = self.confidence_service.calculate_overall(profile)
@@ -61,28 +75,62 @@ class PipelineOrchestrator:
         if invalid_count:
             logger.warning("%d profile(s) failed validation", invalid_count)
 
-        self._write_outputs(merged_profiles, validation_results)
+        if self.config.dry_run:
+            self.projection_engine.project_batch(merged_profiles)
+        else:
+            self._write_outputs(merged_profiles, validation_results)
 
         finished_at = datetime.now()
+        report = self._build_report(started_at, finished_at, merged_profiles, validation_results,
+                                    len(csv_profiles), len(resume_profiles), merge_count=merge_count)
+        if not self.config.dry_run:
+            self._write_validation_report(report)
+        logger.info("Pipeline run complete in %.2fs", report["duration_seconds"])
+        return report
+
+    def _build_report(self, started_at, finished_at, profiles, validation_results,
+                      csv_count: int, resume_count: int, merge_count: int) -> dict:
         report_gen = ReportGenerator()
         report = report_gen.generate(
-            profiles=merged_profiles,
+            profiles=profiles,
             validation_results=validation_results,
             errors=self.errors,
             started_at=started_at,
             finished_at=finished_at,
-            csv_count=len(csv_profiles),
-            resume_count=len(resume_profiles),
+            csv_count=csv_count,
+            resume_count=resume_count,
         )
+        report["input_summary"]["csv_files_processed"] = self.file_counts["csv_files"]
+        report["input_summary"]["resume_files_processed"] = self.file_counts["resume_files"]
+        report["input_summary"]["files_processed"] = self.file_counts["csv_files"] + self.file_counts["resume_files"]
+        report["output_summary"]["merge_count"] = merge_count
+        report["mode"] = "dry_run" if self.config.dry_run else ("validate_only" if self.config.validate_only else "run")
+        return report
+
+    def _write_validation_report(self, report: dict) -> None:
+        report_gen = ReportGenerator()
         report_gen.to_json(report, str(Path(self.config.output_dir) / "report.json"))
         report_gen.to_text(report, str(Path(self.config.output_dir) / "report.txt"))
-        logger.info("Pipeline run complete in %.2fs", report["duration_seconds"])
-        return report
+
+    def _validate_input_directories(self) -> None:
+        configured: List[Tuple[str, Optional[str]]] = [
+            ("CSV input directory", self.config.csv_input_dir),
+            ("Resume input directory", self.config.resume_input_dir),
+        ]
+        supplied = [(label, path) for label, path in configured if path]
+        missing = [(label, path) for label, path in supplied if not Path(path).exists()]
+        for label, path in missing:
+            msg = f"{label} does not exist: {path}"
+            logger.warning(msg)
+            self.errors.append(msg)
+        if supplied and len(missing) == len(supplied):
+            raise FileNotFoundError("all configured input directories are missing: " + ", ".join(path for _, path in missing))
 
     def _parse_csv_files(self) -> List[CandidateProfile]:
         if not self.config.csv_input_dir:
             return []
         files = list_files(self.config.csv_input_dir, [".csv"])
+        self.file_counts["csv_files"] = len(files)
         profiles: List[CandidateProfile] = []
         if self.config.parallel and len(files) > 1:
             with ThreadPoolExecutor(max_workers=self.config.max_workers) as executor:
@@ -110,6 +158,7 @@ class PipelineOrchestrator:
         if not self.config.resume_input_dir:
             return []
         files = list_files(self.config.resume_input_dir, [".pdf"])
+        self.file_counts["resume_files"] = len(files)
         profiles: List[CandidateProfile] = []
         if self.config.parallel and len(files) > 1:
             with ThreadPoolExecutor(max_workers=self.config.max_workers) as executor:
@@ -127,7 +176,7 @@ class PipelineOrchestrator:
 
     def _safe_parse_resume(self, file_path: str) -> Optional[CandidateProfile]:
         try:
-            parser = ResumeParser()
+            parser = ResumeParser(use_ner=self.config.use_ner, ner_model=self.config.ner_model)
             result = parser.parse(file_path)
             self.errors.extend(parser.errors)
             return result

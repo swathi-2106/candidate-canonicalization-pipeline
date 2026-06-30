@@ -25,3 +25,9 @@ max_workers: 4
 verbose: false
 quiet: false
 log_file: logs/pipeline.log
+
+validate_only: false
+dry_run: false
+
+use_ner: false
+ner_model: en_core_web_sm
