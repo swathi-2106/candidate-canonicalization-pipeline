@@ -1,224 +1,132 @@
 # Candidate Profile Canonicalization Pipeline
 
-A deterministic, explainable, CLI-based pipeline that ingests recruiter CSV exports and resume PDFs, normalizes and merges them into a single canonical candidate profile per person, tracks **provenance** (where every field came from) and **confidence** (how trustworthy each field is), validates the result against a schema, and produces configurable, reproducible outputs (JSON / CSV / Excel) plus a processing report.
+A deterministic, explainable, CLI-based candidate data transformation pipeline built for the **Eightfold AI Engineering Internship Assignment**.
 
-## Why this design
+The application ingests recruiter CSV exports (structured data) and resume PDFs (unstructured data), normalizes and merges candidate information into a single canonical profile, tracks provenance and confidence for every field, validates the result against a schema, and generates configurable outputs.
 
-- **Deterministic**: no randomness, no LLM calls; the same input always produces the same output (modulo `processing_timestamp`/UUIDs).
-- **Explainable**: every field on a canonical profile carries a `Provenance` record (source file, original raw value, transformation applied) and a `Confidence` (HIGH/MEDIUM/LOW/UNKNOWN).
-- **Graceful failure**: a malformed CSV row or an unreadable PDF is logged and skipped — it never aborts the whole run.
-- **Configurable without code changes**: column mappings, merge strategies, and output **projections** (field selection/renaming) are all driven by config files passed at runtime.
+## Features
 
-### A note on resume parsing
+* Structured source support (Recruiter CSV)
+* Unstructured source support (Resume PDF)
+* Canonical candidate profile generation
+* Email, phone, skill, company, and date normalization
+* Deterministic merge engine
+* Provenance tracking
+* Confidence scoring
+* Runtime configurable projection layer
+* JSON Schema validation
+* JSON, CSV, and Excel export
+* Processing reports and structured logging
+* Graceful handling of malformed inputs
 
-The spec sheet suggested spaCy-based NER for resume parsing. This implementation instead uses **regex + keyword/taxonomy matching** (`src/parsers/resume_extractors.py`). This keeps the pipeline lightweight, fast, fully deterministic, and dependency-light, at the cost of being less robust to free-form resume layouts than a trained NER model. The `ResumeParser(use_ner=...)` flag and the extractor module are structured so a real NER backend (spaCy/transformers) could be swapped in later without changing any downstream code — every extracted field already flows through the same `FieldWithProvenance`/`Confidence` machinery regardless of how it was extracted.
-
-## Architecture
-
-```
-CLI → Pipeline Orchestrator
-        ├─ CSV Parser ─────────┐
-        ├─ Resume Parser ──────┤
-        │                      ▼
-        │             Normalization (phone/email/date/skills/company)
-        │                      ▼
-        │                Merge Engine (conflict resolution, union, priority)
-        │                      ▼
-        │            Provenance & Confidence Services
-        │                      ▼
-        │                  Validator (schema + business rules)
-        │                      ▼
-        │              Projection Engine (configurable shape)
-        │                      ▼
-        └────────────►  Output Generators (JSON/CSV/Excel) + Report
-```
-
-## Project layout
+## Project Structure
 
 ```
 candidate-canonicalization/
 ├── src/
-│   ├── pipeline/        # orchestrator.py, config.py
-│   ├── parsers/         # csv_parser.py, resume_parser.py, resume_extractors.py
-│   ├── normalizers/     # phone, email, date, skills, company, experience
-│   ├── models/          # candidate.py, provenance.py, confidence.py
-│   ├── merge/           # merge_engine.py, conflict_resolver.py, deduplicator.py
-│   ├── services/        # provenance_service.py, confidence_service.py, validator.py
-│   ├── projection/      # projection_engine.py
-│   ├── output/          # json/csv/excel exporters, report_generator.py
-│   ├── cli/             # commands.py
-│   └── utils/           # logger.py, helpers.py, validators.py
+├── config/
 ├── data/
-│   ├── input/{csv,resumes}/    # sample input data
-│   ├── output/                 # generated output (gitignored in practice)
-│   ├── taxonomies/             # skills.json, companies.json, job_titles.json
-│   ├── schemas/schema.json     # output JSON Schema
-│   └── projections/            # example projection specs
-├── tests/                # pytest suite (27 tests)
-├── config/                # default.yaml, production.yaml
-├── scripts/generate_sample_data.py
-├── main.py                # CLI entry point
+│   ├── input/
+│   └── output/
+├── tests/
 ├── requirements.txt
-└── setup.py
+├── main.py
+└── README.md
 ```
 
 ## Installation
 
+Clone the repository and install the dependencies.
+
 ```bash
-cd candidate-canonicalization
 pip install -r requirements.txt
 ```
 
-(Sample CSV/resume data is already included under `data/input/`. To regenerate it: `python scripts/generate_sample_data.py`.)
+## Run the Pipeline
 
-## Quick start
-
-Run the full pipeline against the bundled sample data:
+Generate JSON, CSV, and Excel outputs from the sample recruiter CSV files and resume PDFs.
 
 ```bash
-python main.py run \
-  --csv-dir data/input/csv \
-  --resume-dir data/input/resumes \
-  --output-dir data/output \
-  --format json --format csv --format excel
+python main.py run --csv-dir data/input/csv --resume-dir data/input/resumes --output-dir data/output --format json --format csv --format excel
 ```
 
-This produces, under `data/output/`:
-- `canonical_profiles.json` — full canonical profiles with provenance + confidence
-- `projected_profiles.json` — the default (slimmer) projection
-- `canonical_profiles.csv` — flat CSV (projected fields)
-- `canonical_profiles.xlsx` — multi-sheet workbook (Profiles / Skills / Experience / Education / Validation)
-- `report.json` / `report.txt` — processing metrics, counts, confidence stats, errors
+## Additional Commands
 
-Example console output:
-```
-✔ Pipeline complete: 7 profile(s) generated (7 valid, 0 invalid).
-  Average confidence: 0.8997
-  Outputs written to: data/output
-```
+Inspect a recruiter CSV file:
 
-## CLI reference
-
-```bash
-python main.py run --help
-```
-
-Key options:
-| Flag | Description |
-|---|---|
-| `--csv-dir PATH` | Directory of recruiter CSV files |
-| `--resume-dir PATH` | Directory of resume PDFs |
-| `--output-dir PATH` | Where to write outputs (default `data/output`) |
-| `--format [json\|csv\|excel]` | Repeatable; choose one or more output formats |
-| `--config PATH` | YAML/JSON file (see `config/default.yaml`) |
-| `--merge-priority [CSV\|RESUME]` | Which source wins on unspecified conflicts |
-| `--column-mapping PATH` | JSON `{csv_header: canonical_field}` overrides |
-| `--projection PATH` | JSON projection spec (see below) |
-| `--schema PATH` | JSON Schema to validate output against |
-| `--parallel/--no-parallel` | Toggle concurrent file processing (default on) |
-| `--validate-only` | Parse and validate inputs, write only validation reports |
-| `--dry-run` | Execute the full pipeline without writing output artifacts or file logs |
-| `-v/--verbose`, `-q/--quiet` | Logging verbosity |
-
-Other commands:
 ```bash
 python main.py inspect-csv data/input/csv/recruiter_export_1.csv
+```
+
+Inspect a resume:
+
+```bash
 python main.py inspect-resume data/input/resumes/jane_doe_resume.pdf
 ```
 
-Validation-only mode:
+Run validation only:
+
 ```bash
 python main.py run --csv-dir data/input/csv --resume-dir data/input/resumes --validate-only
 ```
 
-Dry-run mode:
+Run without generating output files:
+
 ```bash
 python main.py run --csv-dir data/input/csv --resume-dir data/input/resumes --dry-run
 ```
 
-Environment variables are optional defaults loaded from `.env` when `python-dotenv` is installed. CLI flags take highest priority, explicit config files take precedence over environment defaults, and the pipeline behaves as before when no `.env` file is present. Supported values include `DEFAULT_PHONE_COUNTRY`, `PIPELINE_CONFIG_PATH`, `LOG_LEVEL`, `LOG_FILE`, `RESUME_USE_NER`, and `RESUME_NER_MODEL`.
-
-Optional OCR and NER support are disabled unless their dependencies/configuration are available:
-```bash
-pip install -e ".[ocr]"
-pip install -e ".[ner]"
-```
-OCR is attempted only when a PDF has no extractable text. NER enhances resume extraction only when `use_ner: true` or `RESUME_USE_NER=true`; regex extraction remains the default and fallback.
-
-## Configurable column mapping (CSV)
-
-The CSV parser ships with built-in header aliases (`"Candidate Name"`, `"full name"`, `"Email Address"`, `"mobile"`, etc. — see `DEFAULT_COLUMN_MAPPING` in `src/parsers/csv_parser.py`), so most recruiter exports work out of the box, delimiter included (comma, semicolon, tab, pipe are auto-detected). For unusual headers, supply a JSON override:
-
-```json
-{ "Nom": "name", "Courriel": "email" }
-```
-```bash
-python main.py run --csv-dir ... --column-mapping my_mapping.json
-```
-
-## Merge strategy
-
-`MergeEngine` merges a CSV-sourced profile and a resume-sourced profile (matched by normalized email via `Deduplicator`) field by field:
-
-- `csv_preferred` / `resume_preferred` — deterministic winner on conflict
-- `longest` — pick the longer string or larger number (used for `years_of_experience`)
-- `union` — combine lists, deduping (used for `skills`, `job_titles`, `certifications`)
-- `csv_only` / `resume_only` — ignore the other source entirely
-
-When both sources **agree**, confidence is boosted to `HIGH` and a merge note is recorded. When they **conflict**, the loser's value is discarded, the winner is recorded, and confidence is capped at `MEDIUM` — both decisions are logged in `profile.merge_notes` and `profile.<field>.provenance`. Override the defaults via `config/default.yaml`'s `merge_strategy:` block or `--config`.
-
-## Configurable projections (no code changes)
-
-The `ProjectionEngine` reshapes a canonical profile into any output shape via a JSON spec — pick fields, rename them, flatten lists, choose what happens to missing values (`null` / `omit` / `error`), and optionally include confidence/provenance alongside each value:
-
-```json
-{
-  "fields": [
-    {"source": "name.value", "target": "candidate_name"},
-    {"source": "skills", "target": "top_skills", "extract": "value", "list": true}
-  ],
-  "include_confidence": true,
-  "missing_value_policy": "omit"
-}
-```
-```bash
-python main.py run --csv-dir ... --resume-dir ... --projection data/projections/recruiter_summary.json
-```
-See `data/projections/recruiter_summary.json` for a complete example. This is what drives the CSV/Excel exports too.
-
-## Provenance & confidence example
-
-Every field on a canonical profile looks like this:
-```json
-{
-  "value": "Jane Doe",
-  "confidence": "HIGH",
-  "provenance": {
-    "source_type": "MERGED",
-    "source_file": "merged",
-    "original_value": ["Jane Doe", "Jane Doe"],
-    "transformation": "agreement_merge",
-    "timestamp": "2026-06-30T11:05:13.154419"
-  }
-}
-```
-
-## Validation
-
-`Validator` checks required fields (`profile_id`, `name`, `email`), email format, plausible phone length, plausible `years_of_experience`, and warns (non-fatally) when skills/experience are empty. If `jsonschema` is installed (it's in `requirements.txt`) and `--schema` is supplied, the serialized profile is also validated against `data/schemas/schema.json`. Results are written into the Excel `Validation` sheet and `report.json`.
-
-## Running tests
+Run using a custom projection configuration:
 
 ```bash
-pip install -r requirements.txt
-pytest tests/ -v
-# with coverage:
-pytest tests/ --cov=src --cov-report=term-missing
+python main.py run --csv-dir data/input/csv --resume-dir data/input/resumes --projection data/projections/recruiter_summary.json --format json
 ```
-27 tests cover parsers (CSV header mapping, delimiter detection, graceful row failure, resume error handling), normalizers (phone/email/date/skills/company/experience), the merge engine (agreement boosting, conflict resolution, dedupe), and the projection engine (renaming, missing-value policies, confidence inclusion).
 
-## Known limitations
+## Sample Output
 
-- Resume extraction is regex/heuristic-based (see "A note on resume parsing" above); scanned/image-only PDFs with no text layer cannot be parsed (OCR is out of scope) and will be logged as errors and skipped.
-- `years_of_experience` derived from resume date ranges sums per-role durations without overlap detection (concurrent roles would be double-counted).
-- Company/skill taxonomies (`data/taxonomies/*.json`) are illustrative starter sets — extend them for production use.
+Running the pipeline on the provided sample inputs generates output similar to:
+
+```text
+Pipeline complete: 10 profile(s) generated (9 valid, 1 invalid).
+Average confidence: 0.8678
+Outputs written to: data/output
+```
+
+Generated artifacts:
+
+* `canonical_profiles.json`
+* `projected_profiles.json`
+* `canonical_profiles.csv`
+* `canonical_profiles.xlsx`
+* `report.json`
+* `report.txt`
+
+## Testing
+
+Execute the complete test suite:
+
+```bash
+pytest tests -v
+```
+
+## Technologies
+
+* Python
+* Pandas
+* Pydantic
+* PyMuPDF
+* pdfplumber
+* PyYAML
+* JSON Schema
+* OpenPyXL
+* pytest
+
+## Author
+
+**Swathi S**
+
+Email: [swathirtcc27@gmail.com](mailto:swathirtcc27@gmail.com)
+
+LinkedIn: https://www.linkedin.com/in/swathi-s-cse/
+
+GitHub: https://github.com/swathi-2106/
